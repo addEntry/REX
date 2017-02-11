@@ -13,6 +13,7 @@ app.use(express(__dirname + '/public'));
 
 // set ejs as the templating engine
 app.set('view engine', 'ejs');
+app.use(expressLayouts);
 
 // setup routes
 app.use(require('./app/routes'));
