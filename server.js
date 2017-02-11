@@ -4,6 +4,7 @@
 var express = require('express');
 var app = express();
 var listenPort = process.env.PORT || 3000;
+var expressLayouts = require('express-ejs-layouts');
 
 // app configuration
 
