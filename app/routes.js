@@ -1,11 +1,10 @@
 // express router
 var express = require('express');
 var router = express.Router();
+var mainController = require('./controllers/mainController');
 
 // export router :
 module.exports = router;
 
 // define routes :
-router.get('/', function(req, res) {
-    res.send('Hello, I am the app');
-});
+router.get('/', mainController.showHome);
