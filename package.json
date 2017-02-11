@@ -1,0 +1,26 @@
+{
+  "name": "crud.rex",
+  "version": "1.0.0",
+  "description": "REX",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/addEntry/REX.git"
+  },
+  "keywords": [
+    "node",
+    "mongodb",
+    "express",
+    "ejs"
+  ],
+  "author": "addEntry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/addEntry/REX/issues"
+  },
+  "homepage": "https://github.com/addEntry/REX#readme"
+}
