@@ -7,11 +7,11 @@ var listenPort = process.env.PORT || 3000;
 
 // app configuration
 
+// static folders
+app.use(express(__dirname + '/public'));
 
 // setup routes
-app.get('/', function(req, res) {
-    res.send('Hello, I am the app');
-});
+app.use(require('./app/routes'));
 
 // server fireUp
 app.listen(listenPort, function(req, res) {
