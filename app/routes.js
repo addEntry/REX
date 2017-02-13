@@ -7,4 +7,4 @@ var mainController = require('./controllers/mainController');
 module.exports = router;
 
 // define routes :
-router.get('/', mainController.showHome);
+router.get('/', mainController.showLogin);
