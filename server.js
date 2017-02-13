@@ -16,6 +16,9 @@ var configDB = require('./config/database.js');
 
 // app configuration
 
+// database adress
+mongoose.connect("mongodb://127.0.0.1/REX");
+
 // static folders
 app.use(express.static(__dirname + '/public'));
 
