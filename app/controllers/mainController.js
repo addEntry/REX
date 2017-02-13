@@ -2,6 +2,6 @@ module.exports = {
 
     // show the homePage :
     showLogin: function(req, res) {
-        res.render('pages/login');
+        res.render('pages/auth/login');
     }
 }
