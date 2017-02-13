@@ -9,7 +9,7 @@ var expressLayouts = require('express-ejs-layouts');
 // app configuration
 
 // static folders
-app.use(express(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 // set ejs as the templating engine
 app.set('view engine', 'ejs');
