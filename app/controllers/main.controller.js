@@ -1,27 +1,21 @@
+// mainController
 var bcrypt = require('bcrypt-nodejs');
 
+// let's show the homePage:
 module.exports = {
-
-    // show the homePage :
-    showLogin: function(req, res) {
-        res.render('pages/auth/login');
+    showHome: function(req, res) {
+        res.render('./pages/users/login');
     },
-
-    // check user middleware
-    /*
-    checkUser: function(req, res, next) {
-        console.log(req.params);
-        next(); */
 
     checkUser: function(req, res) {
         var password = "$2a$06$t.WW4R/x2HwJiR709TlMsufi/wz4BxEnkFK.MJx1laDsKNi8AtiKe";
         var incommingPassword = req.body.inputPassword;
         var result = bcrypt.compareSync(incommingPassword, password)
         if (result) {
-            res.render('pages/content/usrProfile')
+            console.log(req.body.inputPassword)
+            res.render('pages/users/usrProfile')
         } else {
-            res.body.showLogin;
+            res.body.showHome;
         }
-
     }
-}
+};

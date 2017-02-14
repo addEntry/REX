@@ -9,36 +9,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/addEntry/REX.git"
+    "url": "https://github.com/addEntry"
   },
   "keywords": [
-    "node",
-    "mongodb",
+    "nodeJS",
+    "mongoDB",
     "express",
     "ejs"
   ],
   "author": "addEntry",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/addEntry/REX/issues"
-  },
-  "homepage": "https://github.com/addEntry/REX#readme",
-  "devDependencies": {
-    "nodemon": "^1.11.0"
-  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.16.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
     "ejs": "^2.5.5",
     "express": "^4.14.1",
     "express-ejs-layouts": "^2.2.0",
-    "express-session": "^1.15.1",
-    "method-override": "^2.3.7",
-    "mongoose": "^4.8.2",
-    "morgan": "^1.8.1",
-    "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
+    "express-session": "^1.15.0",
+    "express-validator": "^3.1.2",
+    "mongoose": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }

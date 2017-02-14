@@ -1,47 +1,54 @@
-// server
+// server.js
 
-// grab dependencies
+// Here, we are loading evironment variables
+require('dotenv').config();
+
+// let's define our dependencies
 var express = require('express');
 var app = express();
-var listenPort = process.env.PORT || 3000;
+var listeningPort = process.env.PORT || 3000;
 var expressLayouts = require('express-ejs-layouts');
 var mongoose = require('mongoose');
-var passport = require('passport');
-var flash = require('connect-flash');
-var morgan = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var configDB = require('./config/database.js');
+var cookieParser = require('cookie-parser');
+var flash = require('connect-flash');
+var expressValidator = require('express-validator');
+var bcrypt = require('bcrypt-nodejs');
 
-// database adress
-mongoose.connect("mongodb://127.0.0.1/TESTING");
-
-// app configuration
-app.use(morgan('dev'));
+// let's set session && cookieParser
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(session({
+    secret: process.env.SECRET,
+    cookie: {
+        maxAge: 60000
+    },
+    resave: false, // forced to be saved
+    saveUninitialized: false // dont' save unmodified
+}));
+app.use(flash());
 
-// set ejs as the templating engine
+
+// let's set the connection parameters for mongoDB connection
+mongoose.connect(process.env.DB_URI);
+
+// let's configure our application
+// - let's set our static folder
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json()); // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
+    extended: true
+}));
+app.use(expressValidator());
+
+// let's set 'ejs' as our templating engine
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
-// passport config
-app.use(session({
-    secret: 'test'
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
-
-// static folders
-app.use(express.static(__dirname + '/public'));
-
-
-// setup routes
+// let's set the routes for our app
 app.use(require('./app/routes'));
 
-// server fireUp
-app.listen(listenPort, function(req, res) {
-    console.log('app is running and listening on port ' + listenPort);
+// let's start our server
+app.listen(listeningPort, function(req, res) {
+    console.log('app is listening on http://localhost:' + listeningPort);
 });

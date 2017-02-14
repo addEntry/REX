@@ -1,0 +1,40 @@
+<div class="jumbotron text-center">
+    <h1>REX review</h1>
+</div>
+
+<% if (success.length > 0) {%>
+    <div class="alert alert-success">
+        <%= success %>
+    </div>
+    <% } %>
+
+        <table class="table table-bordered table-hover table-stripped">
+            <thead>
+                <tr>
+                    <th class="col-md-2">Client</th>
+                    <th class="col-md-3">Project</th>
+                    <th class="col-md-5">Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var event of events) {%>
+                    <tr>
+                        <td>
+                            <%= event.name.substr(0, 20) %>
+                        </td>
+                        <td>
+                            <%= event.project.substr(0, 40) %>
+                        </td>
+                        <td>
+                            <%= event.descriptIn.substr(0, 60) %>
+                        </td>
+                        <td>
+                            <a href="/events/<%= event.nameUrl %>" class="btn btn-sm btn-primary">View</a>
+                            <a href="/events/<%= event.nameUrl %>/edit" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="/events/<%= event.nameUrl %>/delete" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>

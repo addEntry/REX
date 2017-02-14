@@ -1,12 +1,15 @@
-/* global stylesheet */
-
 body {
+    font-family: roboto;
     font-size: 16px;
     line-height: 1.5;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
 
-
-/* header */
+html {
+    position: relative;
+    min-height: 100%;
+}
 
 #site-header .navbar {
     border-radius: 0;
@@ -14,16 +17,10 @@ body {
     margin: 0;
 }
 
-
-/* main */
-
 #site-main {
     padding-bottom: 50px;
     padding-top: 50px;
 }
-
-
-/* footer */
 
 #site-footer {
     text-align: center;
@@ -34,6 +31,65 @@ body {
     color: #999;
 }
 
+#subMe {
+    margin-top: 40px;
+}
+
+#manGroup {
+    display: flex;
+}
+
+.form-group, .formgroup {
+    margin-top: 25px;
+}
+
+.jumbotron {
+    margin-top: 10px;
+}
+
+.project {
+    padding: 30px;
+    color: #2A96B5;
+}
+
+.rexTitle {
+    font-size: 30px;
+    color: #F5A135;
+}
+
+.selClass, .pmClass {
+    border: 1px solid #EE564E;
+    border-radius: 10px;
+    padding: 10px;
+    color: #518DC1;
+}
+
+.aD {
+    border: 1px solid #5CB85C;
+    border-radius: 10px;
+    padding: 10px;
+    color: ;
+}
+
+.cl {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.descript-in {
+    border: 1px solid #EF9D34;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: justify;
+}
+
+.descript-out {
+    border: 1px solid #EF9D34;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: justify;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -41,14 +97,6 @@ body {
     /* Set the fixed height of the footer here */
     height: 60px;
     background-color: #222222;
-}
-
-
-/* copyLeft orientation */
-
-.cl {
-    display: inline-block;
-    transform: rotate(180deg);
 }
 
 

@@ -5,19 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>app - welcome!</title>
-    <!-- Latest compiled and minified CSS -->
+    <title>REX</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:200,400,700' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header id=site-header>
-        <div class='navbar navbar-inverse'>
-            <div id="container">
+    <header id="site-header">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
                 <div class="navbar-header">
-                    <a href="/" class="navbar-brand">REX - welcome!</a>
+                    <a href="/" class="navbar-brand"><span class="rexTitle">REX</span></a>
                 </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/events/create">Create a new REX</a>
+                    </li>
+                    <li>
+                        <a href="/rexData/events">View database</a>
+                    </li>
+                    <li>
+                        <a href="/userEvent">Users administration</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </header>
@@ -28,10 +40,10 @@
             <%- body %>
 
         </div>
-
     </main>
+
     <footer id="site-footer" class="footer">
-        CopyLeft <span class="cl">&copy;</span> addEntry - 2017
+        Copyleft <span class="cl">&copy;</span> - 2017 addEntry
     </footer>
 
 </body>

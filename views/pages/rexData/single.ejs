@@ -1,0 +1,79 @@
+<% if (success.length > 0) {%>
+    <div class="alert alert-success">
+        <%= success %>
+    </div>
+    <% } %>
+
+        <div class="jumbotron text-center">
+            <h1><%= event.name %></h1>
+        </div>
+
+        <div class="rexContent">
+            <h2 class="project"><%= event.project %></h2>
+            <hr />
+            <h3>Seller :</h3>
+            <p class="selClass">
+                <%= event.seller  %>
+            </p>
+            <hr />
+            <h3>Project manager :</h3>
+            <p class="pmClass">
+                <%= event.proman  %>
+            </p>
+            <hr />
+            <h3>Active(s) developer(s) :</h3>
+            <p class="aD">
+                <%= event.active %>
+                    test
+            </p>
+            <hr />
+            <br />
+            <h3>Incoming comment :</h3>
+            <p class="descript-in">
+                <%= event.descriptIn %>
+            </p>
+
+            <h4>Incoming notation : <span><%= event.notIn * 10 %></span>%</h4>
+            <div class="progress">
+
+                <%
+              if (event.notIn <= 2.5) {
+                var progressBarClass = "progress-bar-danger";
+              } else if (event.notIn <= 7.5) {
+                var progressBarClass = "progress-bar-warning";
+              } else {
+                var progressBarClass = "progress-bar-success";
+              }
+              %>
+
+                    <div class="progress-bar <%= progressBarClass %> progress-bar-striped active" style="width : <%= event.notIn * 10 %>%">
+                        <span class="sr-only"><%= event.notIn * 10 %>% Complete</span>
+
+                    </div>
+            </div>
+            <hr />
+            <br />
+            <h3>Outgoing comment :</h3>
+            <p class="descript-out">
+                <%= event.descriptOut %>
+            </p>
+
+            <h4>Outgoing notation : <span><%= event.notOut * 10 %></span>%</h4>
+            <div class="progress">
+
+                <%
+              if (event.notOut <= 2.5) {
+                var progressBarClass1 = "progress-bar-danger";
+              } else if (event.notOut <= 7.5) {
+                var progressBarClass1 = "progress-bar-warning";
+              } else {
+                var progressBarClass1 = "progress-bar-success";
+              }
+              %>
+
+                    <div class="progress-bar <%= progressBarClass1 %> progress-bar-striped active" style="width :<%= event.notOut * 10 %>%">
+                        <span class="sr-only"><%= event.notOut *10 %>% Complete</span>
+                    </div>
+            </div>
+            <hr />
+        </div>
