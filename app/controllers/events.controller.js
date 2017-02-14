@@ -1,7 +1,11 @@
 // events controller
 var Event = require('../models/event');
 
-// show all events
+// 
+
+
+
+// show rex edit events
 module.exports = {
     showEvents: showEvents,
     showSingle: showSingle,

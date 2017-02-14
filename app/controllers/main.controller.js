@@ -15,7 +15,36 @@ module.exports = {
             console.log(req.body.inputPassword)
             res.render('pages/users/usrProfile')
         } else {
-            res.body.showHome;
+            res.render('./pages/users/login');
         }
     }
 };
+
+
+/*
+var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
+
+passport.use(new localStrategy(
+    function(username, password, done) {
+        User.findOne({
+            username: username
+        }, function(err, user) {
+            if (err) {
+                return done(err);
+            }
+            if (!user) {
+                return done(null, false, {
+                    message: 'Incorect Username.'
+                });
+            }
+            if (!user.validPassword(password)) {
+                return done(null, false, {
+                    message: 'Incorect password.'
+                });
+            }
+            return done(null, user)
+        })
+    }
+));
+*/

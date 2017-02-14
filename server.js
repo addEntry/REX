@@ -16,6 +16,7 @@ var flash = require('connect-flash');
 var expressValidator = require('express-validator');
 var bcrypt = require('bcrypt-nodejs');
 
+
 // let's set session && cookieParser
 app.use(cookieParser());
 app.use(session({
@@ -27,7 +28,6 @@ app.use(session({
     saveUninitialized: false // dont' save unmodified
 }));
 app.use(flash());
-
 
 // let's set the connection parameters for mongoDB connection
 mongoose.connect(process.env.DB_URI);
@@ -45,10 +45,13 @@ app.use(expressValidator());
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
+//check if is logged here
+/* todo */
+
 // let's set the routes for our app
 app.use(require('./app/routes'));
 
 // let's start our server
 app.listen(listeningPort, function(req, res) {
     console.log('app is listening on http://localhost:' + listeningPort);
-});
+});;

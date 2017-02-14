@@ -13,6 +13,7 @@ module.exports = router;
 // home route
 router.get('/', mainController.showHome);
 router.post('/usrProfile', mainController.checkUser);
+
 // events route
 router.get('/rexData/events', eventsController.showEvents);
 
