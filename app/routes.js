@@ -8,5 +8,3 @@ module.exports = router;
 
 // define routes :
 router.get('/', mainController.showLogin);
-
-// router.post('/');
