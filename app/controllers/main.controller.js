@@ -9,10 +9,10 @@ module.exports = {
 
     checkUser: function(req, res) {
         var password = "$2a$06$t.WW4R/x2HwJiR709TlMsufi/wz4BxEnkFK.MJx1laDsKNi8AtiKe";
-        var incommingPassword = req.body.inputPassword;
+        var incommingPassword = req.body.password;
         var result = bcrypt.compareSync(incommingPassword, password)
         if (result) {
-            console.log(req.body.inputPassword)
+            console.log(req.body.password)
             res.render('pages/users/usrProfile')
         } else {
             res.render('./pages/users/login');
