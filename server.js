@@ -14,17 +14,29 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var configDB = require('./config/database.js');
 
-// app configuration
-
 // database adress
-mongoose.connect("mongodb://127.0.0.1/REX");
+mongoose.connect("mongodb://127.0.0.1/TESTING");
 
-// static folders
-app.use(express.static(__dirname + '/public'));
+// app configuration
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser());
 
 // set ejs as the templating engine
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
+
+// passport config
+app.use(session({
+    secret: 'test'
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+// static folders
+app.use(express.static(__dirname + '/public'));
+
 
 // setup routes
 app.use(require('./app/routes'));
