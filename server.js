@@ -6,7 +6,7 @@ require('dotenv').config();
 // let's define our dependencies
 var express = require('express');
 var app = express();
-var listeningPort = process.env.PORT || 3000;
+var listeningPort = process.env.PORT || 1337;
 var expressLayouts = require('express-ejs-layouts');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
